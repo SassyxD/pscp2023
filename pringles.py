@@ -1,14 +1,19 @@
 """Ejudge"""
 def main():
-    """ghjkl"""
-    count = 0
-    total = 0
+    """Century"""
     num = int(input())
-    if num == 1:
-        print(1)
-    else:
-        while total != num:
-            total = len(str(num))+1
-            count += 1
-        print(total)
+    for _ in range(num):
+        year = input().split()
+        if year[0] == "B.E.":
+            year[1] = int(year[1])-543
+        elif year[0] == "A.D.":
+            year[1] = int(year[1])
+        else:
+            year = "Error"
+        if year == "Error" or year[1] < 0:
+            print("ERROR")
+        elif year[1]/100 > year[1]//100:
+            print((year[1]//100)+1)
+        else:
+            print(int(year[1]//100))
 main()
